@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  background-color: black;
+  color: white;
+}
+
+a {
+  color:white;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: 100;
+  font-size: medium;
+}
+
+img {
+  width: 476px;
+}
+/* TAB STYLES */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid;
+  background-color: black;
+  color: white;
+  width: 500px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: white;
+  color: black;
+}
+
+.tab button.active:after {
+  background-color: white;
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 476px;
+  margin: auto;
+}
+
+/* BUTTON STYLES */
+
+.collapsible {
+  background-color:black;
+  color: white;
+  cursor: pointer;
+  padding: 2px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 17px;
+}
+
+.active, .collapsible:hover {
+  background-color: white;
+  color:black;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+
+}
+
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight:regular;
+  float: left;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.collapsible:hover:after {
+  content: '\002B';
+  color: black;
+  font-weight:regular;
+  float: left;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.active:hover:after {
+  content: "\2212";
+  color: black;
+}
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'about')">about</button>
+    <button class="tablinks" onclick="openCity(event, 'portfolio')">portfolio</button>
+    <button class="tablinks" onclick="openCity(event, 'CV')">CV</button>
+  </div>
+
+  <div id="about" class="tabcontent">
+    <p> Welcome, this is Sarah Fitterer's application website for the Design and Computation Master Studies.</p>  
+   </div>
+
+   <div id="portfolio" class="tabcontent">
+
+    <button type="button" class="collapsible">Installations</button>
+      <div class="content">
+        <p>Selected:</p>
+        <h3>So Tell Me, GPT</h3>
+        <p>Interactive installation playfully investigating AI alignment questions through a psychoanalytic therapy role play. </p>
+        <img src="content\images\sotellme_title3.gif">
+        <img src="content\images\sotellme_title4.gif">
+        <p>Other installations:</p>
+        <ul>
+          <li>HORST</li>
+          <li>Pigeon Poop</li>
+          <li>2015 Knowmads Business School Amsterdam</li>
+        </ul>
+      </div>
+
+    <button type="button" class="collapsible">Talks & Panels</button>
+      <div class="content">
+        <p>KI zwischen Innovation und Verantwortung @ St Virgil Salzburg</p>
+        <p>Other talks:</p>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=mkp9qIY3rxc"target="_blank" class="hovertext link">The Future of Art</a> @ Dutch Innovation Days (2023)</li>
+          <li><a href="https://www.instagram.com/p/Cbew5aPl9lc/" target="_blank" class="hovertext link">Chicken, Sex, and Power</a><img class="hoverimage" src="pages\horst\HORST_talkpic.png" alt=""> @ ArtBlab London (2022)</li>
+        </ul>
+      </div>
+
+    <button type="button" class="collapsible">Publications</button>
+      <div class="content">
+        <ul>
+          <li>2021-2018 Design Academy Eindhoven</li>
+          <li>2017-2016 University College Maastricht</li>
+          <li>2015 Knowmads Business School Amsterdam</li>
+        </ul>
+      </div>
+    
+    <button type="button" class="collapsible">Workshops</button>
+      <div class="content">
+        <ul>
+          <li>2021-2018 Design Academy Eindhoven</li>
+          <li>2017-2016 University College Maastricht</li>
+          <li>2015 Knowmads Business School Amsterdam</li>
+        </ul>
+      </div>
+
+    <button type="button" class="collapsible">Videos</button>
+      <div class="content">
+        <ul>
+          <li>2021-2018 Design Academy Eindhoven</li>
+          <li>2017-2016 University College Maastricht</li>
+          <li>2015 Knowmads Business School Amsterdam</li>
+        </ul>
+      </div>
+
+    <button type="button" class="collapsible">Commissions</button>
+      <div class="content">
+        
+        <p></p>
+        <p>Other commissions:</p>
+        <ul>
+          <li>Media Design for <a href="https://afd-verbot.de/">AfD-Verbot</a> by Zentrum für Politische Schönheit (2023)</li>
+          <li>Production and Graphic Design for <a href="https://politicalbeauty.de/unsere-waffen.html">Wo sind unsere Waffen?</a> by Zentrum für Politische Schönheit (2021)</li>
+        </ul>
+      </div>
+
+   </div>
+      
+   <div id="CV" class="tabcontent">
+    <p> *1996 in Berlin</p>
+    <p>freelance artist since 2021</p>  
+      <button type="button" class="collapsible">Education</button>
+      <div class="content">
+        <ul>
+          <li>2021-2018 Design Academy Eindhoven</li>
+          <li>2017-2016 University College Maastricht</li>
+          <li>2015 Knowmads Business School Amsterdam</li>
+        </ul>
+      </div>
+
+      <button type="button" class="collapsible">Exhibitions</button>
+      <div class="content">
+        <ul>
+          <li>2021-2018 Design Academy Eindhoven</li>
+          <li>2017-2016 University College Maastricht</li>
+          <li>2015 Knowmads Business School Amsterdam</li>
+        </ul>
+      </div>
+
+   </div>
+
+   <script>
+    /*Tabscript*/
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    /*Collapsescript*/
+    var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+    </script>
+
+  
+
+</body>
+</html>
