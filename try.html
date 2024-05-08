@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Hover Effect</title>
+<style>
+    .image-container {
+        position: relative;
+        width: 300px; /* Adjust the width according to your image size */
+        height: 200px; /* Adjust the height according to your image size */
+        overflow: hidden;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+</style>
+</head>
+<body>
+
+<div class="image-container">
+    <img src="content\images\sotellme_title3.gif" alt="Original Image">
+    <div class="overlay">
+        <img src="content\images\sotellme_title4.gif">
+    </div>
+</div>
+
+</body>
+</html>

@@ -126,12 +126,44 @@ img {
   content: "\2212";
   color: black;
 }
-.active:after {
+.active:after  {
   content: "\2212";
   color: black;
 }
 
+/*IMAGE OVERLAY*/
 
+.image-container {
+        position: relative;
+        width: 476px; /* Adjust the width according to your image size */
+        overflow: hidden;
+    }
+
+    .image-container img {
+        width: 476px;
+        transition: 0.3s ease;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 476px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
 
 
 </style>
@@ -156,8 +188,17 @@ img {
         <p>Selected:</p>
         <h3>So Tell Me, GPT</h3>
         <p>Interactive installation playfully investigating AI alignment questions through a psychoanalytic therapy role play. </p>
-        <img src="content\images\sotellme_title3.gif">
-        <img src="content\images\sotellme_title4.gif">
+        <div class="image-container">
+          <img src="content\images\sotellme_title3.gif" alt="Original Image">
+          <div class="overlay">
+              <img src="content\images\sotellme_title4.gif">
+          </div>
+        </div>
+        <p>Developed during the Summer Sessions Residency and presented @_v2 Rotterdam Test Lab 2023</p>
+          <a href="https://www.v2.nl/works/so-tell-me-gpt" target="_blank">Full work description</a>
+          <br>
+          <a href="https://vimeo.com/927132824" target="_blank">Process video</a>
+        
         <p>Other installations:</p>
         <ul>
           <li>HORST</li>
