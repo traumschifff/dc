@@ -104,7 +104,7 @@ img {
 }
 
 
-.collapsible:after {
+button.collapsible:after {
   content: '\002B';
   color: white;
   font-weight:regular;
@@ -113,7 +113,7 @@ img {
   margin-right: 5px;
 }
 
-.collapsible:hover:after {
+button.collapsible:hover:after {
   content: '\002B';
   color: black;
   font-weight:regular;
@@ -122,14 +122,16 @@ img {
   margin-right: 5px;
 }
 
-.active:hover:after {
+
+button.collapsible.active:hover:after {
   content: "\2212";
   color: black;
 }
-.active:after  {
+button.collapsible.active:after  {
   content: "\2212";
   color: black;
 }
+
 
 /*IMAGE OVERLAY*/
 
