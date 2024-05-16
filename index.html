@@ -136,37 +136,33 @@ button.collapsible.active:after  {
 /*IMAGE OVERLAY*/
 
 .image-container {
-        position: relative;
-        width: 476px; /* Adjust the width according to your image size */
-        overflow: hidden;
-    }
-
-    .image-container img {
-        width: 476px;
-        transition: 0.3s ease;
-    }
-
-    .image-container:hover img {
-        transform: scale(1.1);
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 476px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        opacity: 0;
-        transition: 0.3s ease;
-    }
-
-    .image-container:hover .overlay {
-        opacity: 1;
-    }
-
+  width: 100%;
+  max-width: 476px;
+  margin: 0 auto;
+  position: relative;
+}
+.image-container img {
+  width: 100%;
+}
+.image-container img.original {
+  opacity: 1;
+  visibility: visible;
+}
+.image-container img.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.image-container:hover img.original {
+  opacity: 0;
+  visibility: hidden;
+}
+.image-container:hover img.overlay {
+  opacity: 1;
+  visibility: visible;
+}
 
 </style>
 
@@ -176,12 +172,26 @@ button.collapsible.active:after  {
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'about')">about</button>
     <button class="tablinks" onclick="openCity(event, 'portfolio')">portfolio</button>
-    <button class="tablinks" onclick="openCity(event, 'CV')">CV</button>
+    <!-- <button class="tablinks" onclick="openCity(event, 'CV')">CV</button> -->
   </div>
 
   <div id="about" class="tabcontent">
     <p> Welcome, this is Sarah Fitterer's application website for the Design and Computation Master Studies.</p>  
-   </div>
+    <button type="button" class="collapsible">Motivation Letter</button>
+    <div class="content">
+      <p><a href="content\About\SarahFitterer_Motivationsschreiben_2024.pdf" download="fittererrCV_2023-11.pdf" target="_blank">Download here</a></p>
+    </div>
+
+    <button type="button" class="collapsible">Contact</button>
+    <div class="content">
+      <p>sarah.fitterer [at] posteo.de</p>
+    </div>
+
+    <button type="button" class="collapsible">CV</button>
+    <div class="content">
+      <p><a href="content\About\FITTERERR_talentcv.pdf" download="fittererrCV_2023-11.pdf" target="_blank">Download here</a></p>
+    </div>
+  </div>
 
    <div id="portfolio" class="tabcontent">
 
@@ -191,67 +201,80 @@ button.collapsible.active:after  {
         <h3>So Tell Me, GPT</h3>
         <p>Interactive installation playfully investigating AI alignment questions through a psychoanalytic therapy role play. </p>
         <div class="image-container">
-          <img src="content\images\sotellme_title3.gif" alt="Original Image">
-          <div class="overlay">
-              <img src="content\images\sotellme_title4.gif">
-          </div>
+          <img src="content\images\sotellme_title3.gif" alt="Original Image" class="original">
+          <img src="content\images\sotellme_title4.gif" class="overlay" alt="Overlay Image">
         </div>
-        <p>Developed during the Summer Sessions Residency and presented @_v2 Rotterdam Test Lab 2023</p>
+        <p>Developed during the Summer Sessions Residency and presented @_v2 Rotterdam Test Lab 2023.</p>
           <a href="https://www.v2.nl/works/so-tell-me-gpt" target="_blank">Full work description</a>
           <br>
           <a href="https://vimeo.com/927132824" target="_blank">Process video</a>
         
         <p>Other installations:</p>
         <ul>
-          <li>HORST</li>
-          <li>Pigeon Poop</li>
-          <li>2015 Knowmads Business School Amsterdam</li>
+          <li> <a href="https://fittererr.com/soup.html#well" target="_blank">Fan Fiction Wishing Well</a> </li>
+          <li> <a href="https://fittererr.com/soup.html#horst" target="_blank">HORST</a> </li>
         </ul>
       </div>
 
-    <button type="button" class="collapsible">Talks & Panels</button>
+      <button type="button" class="collapsible">Publications</button>
       <div class="content">
-        <p>KI zwischen Innovation und Verantwortung @ St Virgil Salzburg</p>
-        <p>Other talks:</p>
+        <p>Selected:</p>
+        <h3>Ist es Spiel oder Arbeit?</h3>
+        <p> <a href="https://wzb.eu/de" target="_blank">WZB</a> Rundbrief zu Playbour im Roblox Metaverse. Wie kann man spielende Kinder vor Ausbeutung schützen?</p>
+        <div class="image-container">
+          <img src="content\images\wzbbrief_gifexport4.gif" alt="Original Image" class="original">
+          <img src="content\images\wzbbrief_gifexport1.gif" class="overlay" alt="Overlay Image">
+        </div>
+        <p>Gemeinsam mit Jonas Ferdinand und Maximilian Greb vom WZB verfasst. </p>
+          <a href="https://bibliothek.wzb.eu/wzbrief-arbeit/WZBriefArbeit252024_ferdinand_fitterer_greb.pdf" target="_blank">Zum Artikel</a>
+          
+        <p>Other Publications:</p>
         <ul>
+          <li> <a href="https://sonicacts.com/archive/anguille-vannamei-fertile-waters" target="_blank">Fertile Waters - Interview</a> in ECOES #4</li>
+          <li> <a href="https://diagram.love/showmelove.html">Show me Love</a> self-published online publication</li>
+          <li> <a href="https://www.temamagazine.com/normality-6/30planks" target="_blank">30 Planks</a> in TEMA Magazine </li>
+        </ul>
+      </div>
+
+    <button type="button" class="collapsible">Talks & Workshops</button>
+      <div class="content">
+        <p>Selected:</p>
+        <h3>Weaving the Global Unconscious</h3>
+        <p>Two-day collective AI filmmaking workshop inspired by fanfiction culture.</p>
+        <div class="image-container">
+          <img src="content\images\jveworkshop_gifexport2.gif" alt="Original Image" class="original">
+          <img src="content\images\jveworkshop_gifexport1.gif" class="overlay" alt="Overlay Image">
+        </div>
+        <p>Commissioned by Video Power, hosted at the Jan van Eyck Academy Maastricht.</p>
+        <a href="https://www.instagram.com/p/C1mJkIZNNL3/" target="_blank">Full workshop Description</a>
+        <p>Upcoming workshop:</p>
+        <ul>
+          <li>KI x Typographie @ HBK Braunschweig</li>
+        </ul>
+        <p>Talks & Panels:</p>
+        <ul>
+          <li>KI zwischen Innovation und Verantwortung @ St Virgil Salzburg</li>
           <li><a href="https://www.youtube.com/watch?v=mkp9qIY3rxc"target="_blank" class="hovertext link">The Future of Art</a> @ Dutch Innovation Days (2023)</li>
           <li><a href="https://www.instagram.com/p/Cbew5aPl9lc/" target="_blank" class="hovertext link">Chicken, Sex, and Power</a><img class="hoverimage" src="pages\horst\HORST_talkpic.png" alt=""> @ ArtBlab London (2022)</li>
         </ul>
       </div>
 
-    <button type="button" class="collapsible">Publications</button>
-      <div class="content">
-        <ul>
-          <li>2021-2018 Design Academy Eindhoven</li>
-          <li>2017-2016 University College Maastricht</li>
-          <li>2015 Knowmads Business School Amsterdam</li>
-        </ul>
-      </div>
-    
-    <button type="button" class="collapsible">Workshops</button>
-      <div class="content">
-        <ul>
-          <li>2021-2018 Design Academy Eindhoven</li>
-          <li>2017-2016 University College Maastricht</li>
-          <li>2015 Knowmads Business School Amsterdam</li>
-        </ul>
-      </div>
-
-    <button type="button" class="collapsible">Videos</button>
-      <div class="content">
-        <ul>
-          <li>2021-2018 Design Academy Eindhoven</li>
-          <li>2017-2016 University College Maastricht</li>
-          <li>2015 Knowmads Business School Amsterdam</li>
-        </ul>
-      </div>
-
     <button type="button" class="collapsible">Commissions</button>
       <div class="content">
+        <p>Selected:</p>
+        <h3>One Health Alliances</h3>
+        <p>What if humans would share governance with nonhumans?</p>
+        <div class="image-container">
+          <img src="content\images\musae_gifexport2.gif" alt="Original Image" class="original">
+          <img src="content\images\musae_gifexport1.gif" class="overlay" alt="Overlay Image">
+        </div>
+        <p>Trend Research and Future Scenario Development for <a href="https://nonhuman-nonsense.com/">Nonhuman Nonsense</a>, in the framework of MUSAE S+T+ARTS project (2023).</p>
+          <a href="https://musae.starts.eu/musae/2nd-open-call-scenarios-by-nonhuman-nonsense/" target="_blank">Full Scenario Description</a>
+          
         
-        <p></p>
         <p>Other commissions:</p>
         <ul>
+          <li>Videowork and Exhibition Design for the <a href="https://www.instagram.com/p/C5nveZeCYG9/?img_index=1" target="_blank">Biocultural Seed Bank</a> by Nonhuman Nonsense (2024)</li>
           <li>Media Design for <a href="https://afd-verbot.de/">AfD-Verbot</a> by Zentrum für Politische Schönheit (2023)</li>
           <li>Production and Graphic Design for <a href="https://politicalbeauty.de/unsere-waffen.html">Wo sind unsere Waffen?</a> by Zentrum für Politische Schönheit (2021)</li>
         </ul>
@@ -259,9 +282,16 @@ button.collapsible.active:after  {
 
    </div>
       
+   <!--
    <div id="CV" class="tabcontent">
     <p> *1996 in Berlin</p>
     <p>freelance artist since 2021</p>  
+
+     <button type="button" class="collapsible">Bio</button>
+     <div class="content">
+        <p>lalalala</p>
+     </div>
+
       <button type="button" class="collapsible">Education</button>
       <div class="content">
         <ul>
@@ -279,7 +309,7 @@ button.collapsible.active:after  {
           <li>2015 Knowmads Business School Amsterdam</li>
         </ul>
       </div>
-
+    -->
    </div>
 
    <script>
